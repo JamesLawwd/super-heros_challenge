@@ -6,7 +6,7 @@ Power.create([
   { name: "elasticity", description: "can stretch the human body to extreme lengths" }
 ])
 
-puts "🦸‍♀️ Seeding heroes..."
+puts "Seeding heroes..."
 Hero.create([
   { name: "Kamala Khan", super_name: "Ms. Marvel" },
   { name: "Doreen Green", super_name: "Squirrel Girl" },
@@ -24,12 +24,12 @@ puts "🦸‍♀️ Adding powers to heroes..."
 
 strengths = ["Strong", "Weak", "Average"]
 Hero.all.each do |hero|
-  rand(1..3).times do
+rand(1..3).times do
     # get a random power
     power = Power.find(Power.pluck(:id).sample)
 
     HeroPower.create!(hero_id: hero.id, power_id: power.id, strength: strengths.sample)
-  end
+end
 end
 
 puts "🦸‍♀️ Done seeding!"

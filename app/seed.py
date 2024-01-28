@@ -1,6 +1,6 @@
 from app import app, db, Hero, Power, HeroPower
 
-# Flask app context
+# Flask   APP CONTEXT
 with app.app_context():
     # Drop existing tables (if any) and create new ones
     db.drop_all()
